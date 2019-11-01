@@ -96,7 +96,8 @@ class MusicLibraryController
     puts "Which song number would you like to play?"
     number = gets.chomp.to_i
     list = Song.all.sort {|a, b| a.name <=> b.name}
-    song = list[number + 1]
+    song = list[number]
+    binding.pry
     puts "Playing #{song.name} by #{song.artist.name}"
   end
   
